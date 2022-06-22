@@ -1,5 +1,5 @@
 {% set name = "beetlesafari" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/beetlesafari-{{ version }}.tar.gz
-  sha256: d850f1769bbae2c5ac0120b0327288edd089cbc911eec70df3df24ce357b24ca
+  sha256: 6fdb3fbf9e4e32eab3065bc4c53232737c31a9ec064e8e0255ff14532e6314fa
 
 build:
   script_env:
