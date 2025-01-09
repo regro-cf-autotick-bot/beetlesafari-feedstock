@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/beetlesafari-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/beetlesafari-{{ version }}.tar.gz
   sha256: 6fdb3fbf9e4e32eab3065bc4c53232737c31a9ec064e8e0255ff14532e6314fa
 
 build:
@@ -14,12 +14,12 @@ build:
     - QT_QPA_PLATFORM=offscreen
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - cachetools
     - dask-core
@@ -30,7 +30,7 @@ requirements:
     - numpy
     - pyclesperanto-prototype
     - pyopencl
-    - python >=3.7
+    - python >={{ python_min }}
     - requests
     - scikit-image
     - toolz
@@ -44,6 +44,7 @@ test:
   requires:
     - oclgrind
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/haesleinhuepf/beetlesafari
